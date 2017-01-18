@@ -11,13 +11,17 @@
   </head>
   <body ng-app = 'myApp'>
     <h1 id="mainHeading">iTalkSmart</h1>
-    <div ng-controller = "HomeController">
-      <input type="text" ng-model="interview" placeholder="interview question">
-      <button type="button" ng-click="postInterview()">submit</button>
+    <div >
+    <nav class="container-fluid">
+      <ul class="nav nav-tabs">
+        <li role="presentation"><a href="#!/home">Home</a></li>
+        <li role="presentation"><a href="#!/speech">Speech Practice</a></li>
+        <li role="presentation"><a href="#!/interview">Interview Practice</a></li>
+        <li role="presentation"><a href="#!/admin">Admin</a></li>
+      </ul>
+    </nav>
+    <main ng-view></main>
 
-      <input type="text" ng-model="speech" placeholder="speech question">
-      <button type="button" ng-click="postSpeech()">submit</button>
-
-    </div>
+</div>
   </body>
 </html>

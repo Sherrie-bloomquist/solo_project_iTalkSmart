@@ -1,8 +1,16 @@
 console.log('js');
 
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.controller('HomeController', ['$scope', '$http', function($scope, $http){
+myApp.config(['$routeProvider', function($routeProvider){
+  $routeProvider
+  .when('/home', {
+    templateUrl: 'views/partials/home.html',
+    controller: 'HomeController'
+  });
+}]);
+
+myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
   console.log('NG');
 
   $scope.getInterview = function (){
@@ -16,7 +24,7 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http){
     });//end http GET call
   };//end getInterview question
 
-  
+
     $scope.getSpeech = function (){
       console.log('returning speech question', $scope.question);
       $http({
@@ -60,4 +68,4 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http){
     });
   };//end postSpeech
 
-}]);//end HomeController
+}]);//end AdminController
