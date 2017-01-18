@@ -26,7 +26,7 @@ app.get('/', function(req, res){
 }); //end base url
 
 //-------Routers------------//
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/interview', interviewRouter);
 app.use('/speech', speechRouter);
 

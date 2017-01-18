@@ -6,8 +6,19 @@ myApp.config(['$routeProvider', function($routeProvider){
   $routeProvider
   .when('/home', {
     templateUrl: 'views/partials/home.html',
-    controller: 'HomeController'
-  });
+    controller: ''
+  })
+  .when('/play', {
+      templateUrl: 'views/partials/play.html',
+      controller: ''
+  })
+  .when('/admin', {
+      templateUrl: 'views/partials/admin.html',
+      controller: 'AdminController'
+  })
+  .otherwise({
+      redirectTo: '/home',
+  }); //end routes
 }]);
 
 myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
