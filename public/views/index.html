@@ -12,8 +12,12 @@
   <body ng-app = 'myApp'>
     <h1 id="mainHeading">iTalkSmart</h1>
     <div ng-controller = "HomeController">
-      <input type="text" ng-model="interview" placeholder="enter question">
+      <input type="text" ng-model="interview" placeholder="interview question">
       <button type="button" ng-click="postInterview()">submit</button>
+
+      <input type="text" ng-model="speech" placeholder="speech question">
+      <button type="button" ng-click="postSpeech()">submit</button>
+
     </div>
   </body>
 </html>

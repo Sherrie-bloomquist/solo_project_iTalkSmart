@@ -3,9 +3,9 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Interview = require('../models/interview');
 
-//------------send question to database---------//
+//------------send interview question to the database---------//
 router.post('/', function(req, res){
-  console.log('in question post');
+  console.log('in interview post');
   console.log('req.body', req.body);
   var sentData = req.body;
     console.log(req.body.question);

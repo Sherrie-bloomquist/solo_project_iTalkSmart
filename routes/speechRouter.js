@@ -1,17 +1,19 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Question = require('../models/speech');
+var Speech = require('../models/speech');
 
-//------------send question to database---------//
+//------------send speech question to the database---------//
 router.post('/', function(req, res){
-  console.log('in question post');
+  console.log('in speech post');
   console.log('req.body', req.body);
   var sentData = req.body;
 
-  var newQuestion = new Question({
-
+  var newSpeech = new Speech({
+    question: req.body.question
 
   });
+  newSpeech.save();
+  res.send('ok');
 });
 module.exports = router;
