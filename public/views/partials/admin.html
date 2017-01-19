@@ -1,8 +1,14 @@
-<div ng-controller = "AdminController">
-  <input type="text" ng-model="interview" placeholder="interview question">
-  <button type="button" ng-click="postInterview()">submit</button>
+<h1>iTalkSmart(logo)</h1>
+<input type="text"  placeholder="username" class="form-control">
+<input type="text" placeholder="password" class="form-control">
+<button type="button" ng-click="auth()" class="btn btn-primary block full-width">Login</button>
 
-  <input type="text" ng-model="speech" placeholder="speech question">
-  <button type="button" ng-click="postSpeech()">submit</button>
+
+<div ng-if="authorized()">
+  <input type="text" ng-model="interview" placeholder="interview question" class="form-control">
+  <button type="button" ng-click="postInterview()" class="btn btn-success">submit</button>
+<br>
+  <input type="text" ng-model="speech" placeholder="speech question" class="form-control">
+  <button type="button" ng-click="postSpeech()" class="btn btn-success">submit</button>
 
 </div>

@@ -17,7 +17,7 @@ myApp.config(['$routeProvider', function($routeProvider){
       controller: 'AdminController'
   })
   .otherwise({
-      redirectTo: '/home',
+      redirectTo: 'home',
   }); //end routes
 }]);
 
