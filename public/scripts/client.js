@@ -17,7 +17,7 @@ myApp.config(['$routeProvider', function($routeProvider){
       controller: 'AdminController'
   })
   .otherwise({
-      redirectTo: 'home',
+      redirectTo: '/home',
   }); //end routes
 }]);
 
@@ -34,6 +34,10 @@ myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
       $scope.interviewResults = response.data;
     });//end http GET call
   };//end getInterview question
+
+//   db.mycoll.aggregate(
+//    { $sample: { size: 1 } }
+// )
 
 
     $scope.getSpeech = function (){

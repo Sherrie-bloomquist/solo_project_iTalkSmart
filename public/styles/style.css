@@ -1,4 +1,40 @@
-#mainHeading {
-  font-size: 30px;
+body{
+  background-color: #F1A94E;
+}
+
+#logo{
+  font-family: Papyrus, fantasy;
+  padding-top: 40px;
+  margin-bottom: 30px;
   text-align: center;
+  background-color: white;
+}
+
+#logo h1{
+  position: relative;
+  top: 30px;
+}
+
+h1{
+  display: inline;
+  font-size: 80px;
+  margin-top: 100px;
+  font-weight: bold;
+}
+
+.image-responsive{
+  height: 200px;
+  width: auto;
+}
+
+.container-fluid{
+  background-color: #48B4C5;
+}
+
+.nav.nav-tabs li a{
+  color: black;
+}
+
+ul.nav.nav-tabs a:hover{
+  color: black;
 }

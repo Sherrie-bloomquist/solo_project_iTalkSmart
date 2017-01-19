@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="styles/style.css">
   </head>
   <body ng-app = 'myApp'>
-    <h1 id="mainHeading">iTalkSmart</h1>
     <div >
     <nav class="container-fluid">
       <ul class="nav nav-tabs">
@@ -19,8 +18,26 @@
         <li role="presentation"><a href="#!/admin">Admin</a></li>
       </ul>
     </nav>
-    <main ng-view></main>
+    <div id="logo">
+      <img src="https://img.clipartfest.com/7c4e57d4e7b95b787b555e8c58718113_open-talking-clipart-png_2000-2400.png" class="image-responsive" id='logo' />
+      <h1>...iTalkSmart</h1>
+    </div>
+
+    <main ng-view class="container"></main>
 
 </div>
+<footer id="homeFooter">
+  <div >
+    additional resources
+    <nav class="container-fluid">
+      <ul class="nav nav-tabs">
+        <li role="presentation"><a href="www.google.com">Google</a></li>
+        <li role="presentation"><a href="www.someplace.com">speech resources</a></li>
+        <li role="presentation"><a href="www.interview.com">interview resources</a></li>
+      </ul>
+    </nav>
+  </div>
+
+</footer>
   </body>
 </html>
