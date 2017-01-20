@@ -6,7 +6,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var port = process.env.PORT || 3000;
 var mongoose = require('mongoose');
-// var passport = require('./strategies/userStrategy');
+var passport = require('./strategies/adminStrategy');
 
 //-----require routers--------//
 var interviewRouter = require('./routes/interviewRouter');
@@ -16,6 +16,23 @@ var speechRouter = require('./routes/speechRouter');
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
+app.use(session({
+   secret: 'secret',
+   key: 'user',
+   resave: 'true',
+   saveUninitialized: false,
+   cookie: { maxage: 60000, secure: false }
+}));
+
+// Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+//-------Routers------------//
+// app.use('/', indexRouter);
+app.use('/interview', interviewRouter);
+app.use('/speech', speechRouter);
+
 //----server listening--------//
 app.listen(port, function(req, res){
   console.log('server listening on', port);
@@ -24,11 +41,6 @@ app.listen(port, function(req, res){
 app.get('/', function(req, res){
   res.sendFile(path.resolve('public/views/index.html'));
 }); //end base url
-
-//-------Routers------------//
-// app.use('/', indexRouter);
-app.use('/interview', interviewRouter);
-app.use('/speech', speechRouter);
 
 
 //------mongoDB connection-------//

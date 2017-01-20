@@ -10,7 +10,7 @@ myApp.config(['$routeProvider', function($routeProvider){
   })
   .when('/play', {
       templateUrl: 'views/partials/play.html',
-      controller: ''
+      controller: 'AdminController'
   })
   .when('/admin', {
       templateUrl: 'views/partials/admin.html',
@@ -23,6 +23,28 @@ myApp.config(['$routeProvider', function($routeProvider){
 
 myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
   console.log('NG');
+
+  $scope.login = function(){
+
+    var userInfo = {
+      username: $scope.username,
+      password: $scope.password
+    };
+    $http({
+      method: 'POST',
+      url: '/',
+      data: userInfo
+    }).then(function successCallback(response) {
+      console.log(response);
+      $window.location.href = '#!/admin';
+    }, function errorCallback(error) {
+      console.log('error', error);
+      $window.location.href = '#!/login';
+      alert('you are not a registered administrator');
+    });
+  };
+
+
 
   $scope.getInterview = function (){
     console.log('returning interview question', $scope.question);

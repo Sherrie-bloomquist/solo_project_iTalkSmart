@@ -19,3 +19,13 @@ router.post('/', function(req, res){
 });
 
 module.exports = router;
+
+router.get('/', function(req, res){
+  console.log( 'in interview get call', req.body );
+  // find().limit(-1).skip(Math.random() * db.interview.count());
+  Interview.find({},function(err, response){
+    console.log('response', response);
+    res.send(response);
+  });
+
+});
