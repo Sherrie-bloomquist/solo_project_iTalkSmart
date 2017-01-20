@@ -1,6 +1,9 @@
 <div id="interviewPlay">
   <img src="" alt="" />
   <button type="button" ng-click="getInterview()">Play</button>
+  <div ng-repeat="interview in interviewResults">
+    {{interview.question}}
+  </div>
 </div>
 
 <div id="speechPlay">
