@@ -25,22 +25,23 @@ myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
   console.log('NG');
 
   $scope.login = function(){
-
+    console.log('in login function');
     var userInfo = {
       username: $scope.username,
       password: $scope.password
     };
+    console.log("userInfo", userInfo);
     $http({
       method: 'POST',
       url: '/',
       data: userInfo
     }).then(function successCallback(response) {
       console.log(response);
-      $window.location.href = '#!/admin';
+      // $window.location.href = '#!/admin';
     }, function errorCallback(error) {
       console.log('error', error);
-      $window.location.href = '#!/login';
-      alert('you are not a registered administrator');
+      // $window.location.href = '#!/login';
+      // alert('you are not a registered administrator');
     });
   };
 

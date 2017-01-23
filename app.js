@@ -42,6 +42,11 @@ app.get('/', function(req, res){
   res.sendFile(path.resolve('public/views/index.html'));
 }); //end base url
 
+app.post('/', passport.authenticate('local'), function(req, res) {
+  console.log('blah blah');
+  res.sendStatus(200);
+});
+
 
 //------mongoDB connection-------//
 var mongoURI = 'mongodb://localhost:27017/questionDB';

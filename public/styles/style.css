@@ -38,3 +38,11 @@ h1{
 ul.nav.nav-tabs a:hover{
   color: black;
 }
+
+#homePageDescription{
+  font-family: Papyrus, fantasy;
+  font-size: 25px;
+  text-align: center;
+  margin: 80px 100px 0 100px;
+
+}

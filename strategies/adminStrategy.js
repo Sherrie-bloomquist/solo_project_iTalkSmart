@@ -8,7 +8,7 @@ passport.use('local', new LocalStrategy({
 }, function(req, username, attemptedPass, done) {
     console.log('hit local strategy');
   // look up the user
-  User.findOne({username: username}, function(err, user) {
+  Admin.findOne({username: username}, function(err, user) {
     if(!user){
       done(null, false, {message: 'not an authorized administrator'});
 
