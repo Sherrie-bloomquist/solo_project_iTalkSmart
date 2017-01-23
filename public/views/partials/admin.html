@@ -1,11 +1,12 @@
 
+<div ng-hide="loggedIn">
 username:<input type="text"  placeholder="username" class="form-control" ng-model="username">
-password:<input type="text" placeholder="password" class="form-control" ng-model="password">
+password:<input type="password" placeholder="password" class="form-control" ng-model="password">
 <button type="button" ng-click="login()" class="btn btn-primary block full-width">Login</button>
+</div>
 
 
-
-<div ng-if="authorized()">
+<div ng-if="loggedIn">
   <input type="text" ng-model="interview" placeholder="interview question" class="form-control">
   <button type="button" ng-click="postInterview()" class="btn btn-success">submit</button>
 <br>

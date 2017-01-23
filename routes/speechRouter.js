@@ -17,3 +17,12 @@ router.post('/', function(req, res){
   res.send('ok');
 });
 module.exports = router;
+
+ router.get('/', function(req, res){
+   console.log('in speech get call', req.body);
+   Speech.find({}, function(err, response){
+     console.log('speech response', response);
+     res.send(response);
+   });
+
+ });

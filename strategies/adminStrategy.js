@@ -35,7 +35,7 @@ passport.serializeUser(function(user, done) {
 // deserialize user - "rehydrate"
 passport.deserializeUser(function(id, done) {
   console.log('deserializeUser');
-    User.findById(id, function(err, user) {
+    Admin.findById(id, function(err, user) {
       done(null, user);
     });
   });

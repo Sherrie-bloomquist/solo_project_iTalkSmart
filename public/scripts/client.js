@@ -1,12 +1,11 @@
-console.log('js');
 
-var myApp = angular.module('myApp', ['ngRoute']);
+
+var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
 
 myApp.config(['$routeProvider', function($routeProvider){
   $routeProvider
   .when('/home', {
     templateUrl: 'views/partials/home.html',
-    controller: ''
   })
   .when('/play', {
       templateUrl: 'views/partials/play.html',
@@ -17,32 +16,29 @@ myApp.config(['$routeProvider', function($routeProvider){
       controller: 'AdminController'
   })
   .otherwise({
-      redirectTo: '/home',
+      redirectTo: 'home'
   }); //end routes
 }]);
 
 myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
-  console.log('NG');
 
   $scope.login = function(){
-    console.log('in login function');
     var userInfo = {
       username: $scope.username,
       password: $scope.password
     };
-    console.log("userInfo", userInfo);
     $http({
       method: 'POST',
       url: '/',
       data: userInfo
     }).then(function successCallback(response) {
-      console.log(response);
-      // $window.location.href = '#!/admin';
+       $scope.loggedIn=response.data;
     }, function errorCallback(error) {
-      console.log('error', error);
-      // $window.location.href = '#!/login';
-      // alert('you are not a registered administrator');
-    });
+      alert('you are not a registered administrator');
+      $scope.username='';
+      $scope.password='';
+
+  });
   };
 
 
@@ -73,7 +69,7 @@ myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
         $scope.speechResults = response.data;
       });//end http GET call
 
-  };//end getInterview
+  };//end getSpeech
 
   $scope.postInterview = function(){
     console.log('in postInterview');

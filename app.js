@@ -44,7 +44,7 @@ app.get('/', function(req, res){
 
 app.post('/', passport.authenticate('local'), function(req, res) {
   console.log('blah blah');
-  res.sendStatus(200);
+  res.send(true);
 });
 
 
