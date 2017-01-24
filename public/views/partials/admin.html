@@ -9,10 +9,10 @@ password:<input type="password" placeholder="password" class="form-control" ng-m
 <div ng-if="loggedIn">
 <br>
   <p class="addToDatabase">Add questions to the database</p>
-  <input type="text" ng-model="interview" placeholder="interview question" class="form-control">
+  <input type="text" ng-model="questions.interview" placeholder="interview question" class="form-control">
   <button type="button" ng-click="postInterview()" class="btn btn-success">submit</button>
 <br><br><br>
-  <input type="text" ng-model="speech.postSpeech" placeholder="speech question" class="form-control">
+  <input type="text" ng-model="questions.speech" placeholder="speech question" class="form-control">
   <button type="button" ng-click="postSpeech()" class="btn btn-success">submit</button>
-
+  {{speech}}
 </div>

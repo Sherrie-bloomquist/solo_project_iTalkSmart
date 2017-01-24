@@ -20,6 +20,8 @@ myApp.config(['$routeProvider', function($routeProvider){
   }); //end routes
 }]);
 
+
+
 myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
 
   $scope.login = function(){
@@ -74,10 +76,10 @@ myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
   $scope.postInterview = function(){
     console.log('in postInterview');
     var newInterview = {
-      question: $scope.interview
+      question: $scope.questions.interview
     }; //end newQuestion object
     console.log('newInterview', newInterview);
-
+    $scope.questions.interview = '';
     //make http call to database to send new interview question
     $http({
       method: 'POST',
@@ -90,10 +92,10 @@ myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
   $scope.postSpeech = function(){
     console.log('in postSpeech');
     var newSpeech = {
-      question: $scope.speech
+      question: $scope.questions.speech
     }; //end newSpeech object
     console.log('newSpeech', newSpeech);
-
+    $scope.questions.speech = '';
     //make http call to database to send new speech question
     $http({
       method: 'POST',
@@ -101,5 +103,5 @@ myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
       data: newSpeech
     });
   };//end postSpeech
-
+  $scope.questions = {};
 }]);//end AdminController
