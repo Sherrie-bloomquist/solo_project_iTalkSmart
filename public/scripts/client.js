@@ -84,7 +84,7 @@ myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
       url: '/interview',
       data: newInterview
     });
-    // $scope.getInterview();
+
   };//end postInterview
 
   $scope.postSpeech = function(){

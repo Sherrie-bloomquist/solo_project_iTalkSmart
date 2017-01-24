@@ -44,5 +44,14 @@ ul.nav.nav-tabs a:hover{
   font-size: 25px;
   text-align: center;
   margin: 80px 100px 0 100px;
+}
 
+.rightNav{
+  float: right !important;
+}
+
+.addToDatabase{
+  font-family: Papyrus, fantasy;
+  font-size: 20px;
+  text-align: center;
 }

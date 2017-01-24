@@ -20,26 +20,11 @@
         <li role="presentation"><a href="#!/home">Home</a></li>
         <li role="presentation"><a href="#!/admin">Admin</a></li>
         <li role="presentation"><a href="#!/play">Let's Practice</a></li>
-        <!-- <span uib-dropdown on-toggle="toggled(open)">
-              <a href id="simple-dropdown" uib-dropdown-toggle>
-                Click me for a dropdown, yo!
-              </a>
-              <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                <li role="menuitem" class="divider"><a href="https://www.toastmasters.org/Resources/Public-Speaking-Tips" target="_blank">Public speaking tips</a></li>
-                <li role="menuitem"><a href="https://docs.google.com/document/d/10DWxNEQ60Ba4p9nxq7GRRceOX6PvufD-7MmX0XRbt2w/edit" target="_blank">Interview tips</a></li>
-              </ul>
-            </span> -->
-        <li class="uib-dropdown">
-       <span uib-dropdown on-toggle="toggled(open)"><a class="uib-dropdown-toggle" data-toggle="uib-dropdown" href="#">Add'l Resources
-       <span class="caret"></span></a>
-       <ul class="dropdown-menu" uib-dropdown-menu role="menu">
-         <li role="menuitem" class="divider"><a href="https://www.toastmasters.org/Resources/Public-Speaking-Tips" target="_blank">Public speaking tips</a></li>
-         <li role="menuitem"><a href="https://docs.google.com/document/d/10DWxNEQ60Ba4p9nxq7GRRceOX6PvufD-7MmX0XRbt2w/edit" target="_blank">Interview tips</a></li>
-       </ul>
+
+        <li role="menuitem" class="rightNav"><a href="https://www.toastmasters.org/Resources/Public-Speaking-Tips" target="_blank">Public Speaking Tips</a></li>
+        <li role="menuitem" class="rightNav"><a href="https://docs.google.com/document/d/10DWxNEQ60Ba4p9nxq7GRRceOX6PvufD-7MmX0XRbt2w/edit" target="_blank">Interview Tips</a></li>
       </ul>
     </nav>
-
-
 
     <div id="logo">
       <img src="https://img.clipartfest.com/7c4e57d4e7b95b787b555e8c58718113_open-talking-clipart-png_2000-2400.png" class="image-responsive" id='logo' />
@@ -48,9 +33,6 @@
 
     <main ng-view class="container"></main>
 
-</div>
-
-
-</footer>
+    </div>
   </body>
 </html>
