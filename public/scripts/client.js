@@ -1,6 +1,6 @@
 var seconds = 0;
 
-var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'countdown']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
 
 myApp.config(['$routeProvider', function($routeProvider){
   $routeProvider
@@ -22,7 +22,7 @@ myApp.config(['$routeProvider', function($routeProvider){
 
 
 
-myApp.controller('AdminController', ['$scope', '$http', "CountdownTimer", "$timeout", function($scope, $http, CountdownTimer, $timeout){
+myApp.controller('AdminController', ['$scope', '$http', '$timeout', function($scope, $http, $timeout){
 
   $scope.login = function(){
     var userInfo = {
@@ -60,6 +60,20 @@ myApp.controller('AdminController', ['$scope', '$http', "CountdownTimer", "$time
       interview = response.data;
       var randomInterview = interview[Math.floor(Math.random()*interview.length)];
       $scope.interviewResults = randomInterview.question;
+      $scope.counter = 15;
+      $scope.onTimeout = function(){
+        $scope.counter--;
+
+        mytimeout = $timeout($scope.onTimeout,1000);
+      };
+      var mytimeout = $timeout($scope.onTimeout,1000);
+      // if (counter === 0){
+      //   $scope.counter++;
+      // }
+
+      $scope.stop = function(){
+        $timeout.cancel(mytimeout);
+    };
     });//end http GET call
 
   };//end getInterview question
