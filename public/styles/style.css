@@ -39,6 +39,10 @@ ul.nav.nav-tabs a:hover{
   color: black;
 }
 
+.btn-block a:hover {
+  color: black;
+}
+
 #homePageDescription{
   font-family: Papyrus, fantasy;
   font-size: 25px;
@@ -54,4 +58,22 @@ ul.nav.nav-tabs a:hover{
   font-family: Papyrus, fantasy;
   font-size: 20px;
   text-align: center;
+}
+
+#interviewPlay{
+  text-align: left;
+
+
+}
+
+#speechPlay{
+  text-align: left;
+
+}
+
+.results{
+  text-align: center;
+  font-family: Papyrus, fantasy;
+  font-size: 40px;
+  margin-top: 40px;
 }

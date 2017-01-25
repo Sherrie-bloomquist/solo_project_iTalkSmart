@@ -35,40 +35,44 @@ myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
       data: userInfo
     }).then(function successCallback(response) {
        $scope.loggedIn=response.data;
-    }, function errorCallback(error) {
-      alert('you are not a registered administrator');
+     }, function errorCallback(error) {
+      swal({
+        title:"you are not a registered administrator",
+        type: "warning",
+        closeOnConfirm: true});
       $scope.username='';
       $scope.password='';
-
-  });
+    });
   };
 
 
 
   $scope.getInterview = function (){
-    console.log('returning interview question', $scope.question);
+     swal('Relax, Be Confident, Be Yourself');
+    
     $http({
       method: "GET",
       url: '/interview'
     }).then(function(response){
-      console.log('back from interview get call:', response);
-      $scope.interviewResults = response.data;
+      interview = response.data;
+      var randomInterview = interview[Math.floor(Math.random()*interview.length)];
+      $scope.interviewResults = randomInterview.question;
     });//end http GET call
+
   };//end getInterview question
 
-//   db.mycoll.aggregate(
-//    { $sample: { size: 1 } }
-// )
 
 
     $scope.getSpeech = function (){
-      console.log('returning speech question', $scope.question);
+      swal('Stand tall, smile, and be ok with the silent pauses');
       $http({
         method: "GET",
         url: '/speech'
       }).then(function(response){
-        console.log('back from speech get call:', response);
-        $scope.speechResults = response.data;
+        speech = response.data;
+        var randomSpeech = speech[Math.floor(Math.random()*speech.length)];
+        $scope.speechResults = randomSpeech.question;
+
       });//end http GET call
 
   };//end getSpeech
