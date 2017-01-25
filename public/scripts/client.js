@@ -1,6 +1,6 @@
 var seconds = 0;
 
-var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'countdown']);
 
 myApp.config(['$routeProvider', function($routeProvider){
   $routeProvider
@@ -22,7 +22,7 @@ myApp.config(['$routeProvider', function($routeProvider){
 
 
 
-myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
+myApp.controller('AdminController', ['$scope', '$http', "CountdownTimer", "$timeout", function($scope, $http, CountdownTimer, $timeout){
 
   $scope.login = function(){
     var userInfo = {
