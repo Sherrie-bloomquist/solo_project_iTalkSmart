@@ -43,6 +43,14 @@ ul.nav.nav-tabs a:hover{
   color: black;
 }
 
+.btn-group-justified, .btn-group-justified:hover {
+  color: black;
+}
+
+.btn-danger.focus, .btn-danger:focus{
+  color: black;
+}
+
 #homePageDescription{
   font-family: Papyrus, fantasy;
   font-size: 25px;
@@ -60,20 +68,15 @@ ul.nav.nav-tabs a:hover{
   text-align: center;
 }
 
-#interviewPlay{
-  text-align: left;
-
-
-}
-
-#speechPlay{
-  text-align: left;
-
-}
-
 .results{
   text-align: center;
   font-family: Papyrus, fantasy;
   font-size: 40px;
   margin-top: 40px;
+}
+
+#logoutButton{
+  text-align: center;
+  color: black !important;
+  margin-top: 30px;
 }
