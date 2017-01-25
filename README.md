@@ -12,7 +12,7 @@ Technologies used:
 * Passport
 * Bootstrap
 * CSS3
-* Heroku
+* Heroku  
 __________________________________  
 Dependencies: (npm install the following)  
 * angular
