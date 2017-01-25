@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.1",
+    "angular-countdown": "^1.2.1",
     "angular-route": "^1.6.1",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.15.2",

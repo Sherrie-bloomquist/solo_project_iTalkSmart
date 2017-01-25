@@ -1,15 +1,18 @@
 
-
-  <div id="interviewPlay" ng-hide="speechResults">
-    <button type="button" ng-hide="speechResults" class="btn btn-group-justified btn-danger" ng-click="getInterview()">Interview question</button>
+<div class="row">
+  <div class="col-md-6">
+    <button type="button" ng-hide="speechResults" class="btn btn-group-justified btn-danger btn-lg" ng-click="getInterview()">Interview question</button>
     <div ng-show="interviewResults" class="results">
       {{interviewResults}}
     </div>
   </div>
 
-  <div id="speechPlay" ng-hide="interviewResults">
-    <button type="button" ng-hide="interviewResults" class="btn btn-group-justified btn-danger" ng-click="getSpeech()">Speech topic</button>
+  <div class="col-md-6">
+    <button type="button" ng-hide="interviewResults" class="btn btn-group-justified btn-danger btn-lg" ng-click="getSpeech()">Speech topic</button>
     <div ng-show="speechResults" class="results">
       {{speechResults}}
     </div>
   </div>
+</div>
+
+<div id="timer" ></div>

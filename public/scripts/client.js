@@ -1,4 +1,4 @@
-
+var seconds = 0;
 
 var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
 
@@ -78,14 +78,6 @@ myApp.controller('AdminController', ['$scope', '$http', function($scope, $http){
 
       });//end http GET call
 
-    // function getTimeRemaining(endtime){
-    //   var t = Date.parse(endtime) - Date.parse(new Date());
-    //   var seconds = Math.floor( (t/1000) % 60 );
-    //   return {
-    //     'total': t,
-    //     'seconds': seconds,
-    //   };
-    // }
 
   };//end getSpeech
 
