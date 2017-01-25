@@ -12,8 +12,10 @@ Technologies used:
 * Passport
 * Bootstrap
 * CSS3
-* Heroku  
-__________________________________  
+* Heroku   
+_____________________________________________  
+
+  
 Dependencies: (npm install the following)  
 * angular
 * angular-countdown
