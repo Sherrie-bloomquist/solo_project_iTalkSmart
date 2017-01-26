@@ -60,20 +60,31 @@ myApp.controller('AdminController', ['$scope', '$http', '$timeout', function($sc
       interview = response.data;
       var randomInterview = interview[Math.floor(Math.random()*interview.length)];
       $scope.interviewResults = randomInterview.question;
-      $scope.counter = 15;
+      $scope.counter = 0;
       $scope.onTimeout = function(){
-        $scope.counter--;
-
-        mytimeout = $timeout($scope.onTimeout,1000);
+        $scope.counter++;
+        myTimer = $timeout($scope.onTimeout,100);
+        changeColor($scope.counter);
+        // var displayMinutes = Math.floor(seconds / 60);
+        // var displaySeconds = seconds % 60;
       };
-      var mytimeout = $timeout($scope.onTimeout,1000);
-      // if (counter === 0){
-      //   $scope.counter++;
-      // }
+      var myTimer = $timeout($scope.onTimeout,100);
+
+      function changeColor(counter) {
+        var colorChange = document.getElementById("container-counter").style;
+        if (counter > 60 && counter < 89) {
+            colorChange.background = "#6AC51A";
+        } else if (counter > 89 && counter < 119) {
+            colorChange.background = "#D4C711";
+        } else if(counter >119) {
+            colorChange.background = "#C52929";
+        }
+      }
+
 
       $scope.stop = function(){
-        $timeout.cancel(mytimeout);
-    };
+        $timeout.cancel(myTimer);
+      };
     });//end http GET call
 
   };//end getInterview question

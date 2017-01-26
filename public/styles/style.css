@@ -68,11 +68,23 @@ ul.nav.nav-tabs a:hover{
   text-align: center;
 }
 
-.results{
+.container-result{
   text-align: center;
   font-family: Papyrus, fantasy;
   font-size: 40px;
   margin-top: 40px;
+}
+
+#container-counter{
+  border-radius: 50%;
+  width: 200px;
+  padding-top: 50px;
+  margin-top: 60px;
+  margin-left: 40px;
+  /*background-color: #89D33F;*/
+  text-align: center;
+  font-size: 40px;
+  font-family: rocksalt;
 }
 
 #logoutButton{
@@ -80,3 +92,10 @@ ul.nav.nav-tabs a:hover{
   color: black !important;
   margin-top: 30px;
 }
+
+/*.container-interview {
+  text-align: right;
+  padding: 0 170px 900px 0;
+  font-size: 40px;
+  font-family: rocksalt;
+}*/
