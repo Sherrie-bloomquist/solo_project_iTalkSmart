@@ -20,7 +20,11 @@ myApp.config(['$routeProvider', function($routeProvider){
   }); //end routes
 }]);
 
-
+myApp.filter('secondsToDateTime', [function() {
+    return function(seconds) {
+        return new Date(1970, 0, 1).setSeconds(seconds);
+    };
+}]);
 
 myApp.controller('AdminController', ['$scope', '$http', '$timeout', function($scope, $http, $timeout){
 
@@ -63,19 +67,17 @@ myApp.controller('AdminController', ['$scope', '$http', '$timeout', function($sc
       $scope.counter = 0;
       $scope.onTimeout = function(){
         $scope.counter++;
-        myTimer = $timeout($scope.onTimeout,100);
+        myTimer = $timeout($scope.onTimeout,1000);
         changeColor($scope.counter);
-        // var displayMinutes = Math.floor(seconds / 60);
-        // var displaySeconds = seconds % 60;
       };
-      var myTimer = $timeout($scope.onTimeout,100);
+      var myTimer = $timeout($scope.onTimeout,1000);
 
       function changeColor(counter) {
         var colorChange = document.getElementById("container-counter").style;
         if (counter > 60 && counter < 89) {
             colorChange.background = "#6AC51A";
         } else if (counter > 89 && counter < 119) {
-            colorChange.background = "#D4C711";
+            colorChange.background = "#D95402";
         } else if(counter >119) {
             colorChange.background = "#C52929";
         }
@@ -100,6 +102,29 @@ myApp.controller('AdminController', ['$scope', '$http', '$timeout', function($sc
         speech = response.data;
         var randomSpeech = speech[Math.floor(Math.random()*speech.length)];
         $scope.speechResults = randomSpeech.question;
+        $scope.counter = 0;
+        $scope.onTimeout = function(){
+          $scope.counter++;
+          myTimer = $timeout($scope.onTimeout,1000);
+          changeColor($scope.counter);
+        };
+        var myTimer = $timeout($scope.onTimeout,1000);
+
+        function changeColor(counter) {
+          var colorChange = document.getElementById("container-counter").style;
+          if (counter > 60 && counter < 89) {
+              colorChange.background = "#6AC51A";
+          } else if (counter > 89 && counter < 119) {
+              colorChange.background = "#D95402";
+          } else if(counter >119) {
+              colorChange.background = "#C52929";
+          }
+        }
+
+
+        $scope.stop = function(){
+          $timeout.cancel(myTimer);
+        };
 
       });//end http GET call
 

@@ -32,9 +32,10 @@
   </div>
 
 <div class="col-sm-6">
-<div id="container-counter" ng-show="interviewResults">
-  <p class="counter">{{counter}}</p>
+<div id="container-counter" ng-if="interviewResults || speechResults">
+  <p class="counter">{{counter | secondsToDateTime | date: 'mm:ss'}}</p>
   <button class="btn btn-default" ng-click="stop()">Stop</button>
 </div>
+
 </div>
 </div>
