@@ -105,10 +105,10 @@ myApp.controller('AdminController', ['$scope', '$http', '$timeout', function($sc
         $scope.counter = 0;
         $scope.onTimeout = function(){
           $scope.counter++;
-          myTimer = $timeout($scope.onTimeout,1000);
+          myTimer = $timeout($scope.onTimeout,100);
           changeColor($scope.counter);
         };
-        var myTimer = $timeout($scope.onTimeout,1000);
+        var myTimer = $timeout($scope.onTimeout,100);
 
         function changeColor(counter) {
           var colorChange = document.getElementById("container-counter").style;
