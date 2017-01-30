@@ -49,7 +49,7 @@ app.post('/', passport.authenticate('local'), function(req, res) {
 
 
 //------mongoDB connection-------//
-var mongoURI = 'mongodb://localhost:27017/questionDB';
+var mongoURI = 'mongodb://heroku_jg1mhz05:3dknr6s7ptr3o5u6uv76fjiv0t@ds023475.mlab.com:23475/heroku_jg1mhz05';
 var MongoDB = mongoose.connect(mongoURI).connection;
 
 MongoDB.on('error', function(err){

@@ -33,6 +33,7 @@
 
 <div class="col-sm-6">
 <div id="container-counter" ng-if="interviewResults || speechResults">
+  <countdown timer="timer" radius="15" stroke="5"></countdown>
   <p class="counter">{{counter | secondsToDateTime | date: 'mm:ss'}}</p>
   <button class="btn btn-default" ng-click="stop()">Stop</button>
 </div>

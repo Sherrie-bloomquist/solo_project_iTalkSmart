@@ -64,6 +64,14 @@ myApp.controller('AdminController', ['$scope', '$http', '$timeout', function($sc
       interview = response.data;
       var randomInterview = interview[Math.floor(Math.random()*interview.length)];
       $scope.interviewResults = randomInterview.question;
+      // $scope.countdown = 15;
+      //
+      // $scope.countdown = function(){
+      //   $scope.countdown--;
+      //   countdown.start();
+      // };
+
+
       $scope.counter = 0;
       $scope.onTimeout = function(){
         $scope.counter++;
@@ -133,6 +141,7 @@ myApp.controller('AdminController', ['$scope', '$http', '$timeout', function($sc
 
   $scope.postInterview = function(){
     console.log('in postInterview');
+    swal("Oooo, Good one!", "It's been added to the database.", "success");
     var newInterview = {
       question: $scope.questions.interview
     }; //end newQuestion object
@@ -149,6 +158,7 @@ myApp.controller('AdminController', ['$scope', '$http', '$timeout', function($sc
 
   $scope.postSpeech = function(){
     console.log('in postSpeech');
+    swal("Sweet question!", "It's been added to the database", "success");
     var newSpeech = {
       question: $scope.questions.speech
     }; //end newSpeech object
